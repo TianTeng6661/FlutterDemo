@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'TTBaseWidget.dart';
-import 'TTListViewDemo.dart';
+import 'CarList/TTListViewDemo.dart';
+import 'root_page.dart';
 
 void main() {
   runApp(ListViewApp());
@@ -12,8 +13,13 @@ class ListViewApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ListViewHome(),
-      theme: ThemeData(primaryColor: Colors.orange),
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        highlightColor: Color.fromRGBO(1, 0, 0, 0.0),
+        splashColor: Color.fromRGBO(1, 0, 0, 0.0),
+      ),
+      home: RootPage(),
     );
   }
 

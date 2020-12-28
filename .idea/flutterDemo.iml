@@ -3,9 +3,10 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/lib" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.dart_tool" />
-      <excludeFolder url="file://$MODULE_DIR$/build" />
       <excludeFolder url="file://$MODULE_DIR$/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/build" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/integration_test/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/integration_test/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/integration_test/build" />
