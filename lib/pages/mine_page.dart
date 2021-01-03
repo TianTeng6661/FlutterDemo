@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/pages/discover/discover_cell.dart';
+import 'package:image_picker/image_picker.dart';
 
 
 class MinePage extends StatefulWidget {
@@ -9,6 +12,9 @@ class MinePage extends StatefulWidget {
 }
 
 class _MinePageState extends State<MinePage> {
+
+  File _avatarFile;
+
   Widget headerWidget() {
     return Container(
       color: Colors.white,
@@ -23,16 +29,20 @@ class _MinePageState extends State<MinePage> {
 //          color: Colors.red,
           child: Row(
             children: <Widget>[
-              Container(
-                width: 70,
-                height: 70,
-                decoration: BoxDecoration(
+              GestureDetector(
+              onTap: pickImage,
+              child: Container(
+              width: 70,
+              height: 70,
+              decoration: BoxDecoration(
 //                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(10.0),
-                  image: DecorationImage(
-                      image: AssetImage('images/Hank.png'), fit: BoxFit.cover),
-                ),
-              ), //头像
+                borderRadius: BorderRadius.circular(10.0),
+                image: DecorationImage(
+                    image: _avatarFile == null ? AssetImage('images/Hank.png') : FileImage(_avatarFile), fit: BoxFit.cover),
+              ),
+            ),
+          ),
+               //头像
               Expanded(
                 child: Container(
 //                  margin: EdgeInsets.only(top: 10, bottom: 10, left: 10, right: 5),
@@ -161,5 +171,13 @@ class _MinePageState extends State<MinePage> {
       ),
     );
   }
+
+  void pickImage() async {
+    PickedFile file = await ImagePicker().getImage(source: ImageSource.gallery);
+    setState(() {
+      _avatarFile = File(file.path);
+    });
+  }
+
 }
 

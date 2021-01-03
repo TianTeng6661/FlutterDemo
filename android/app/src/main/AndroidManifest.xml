@@ -2,7 +2,9 @@
     package="com.example.flutter_demo">
    <application
         android:label="WeiChatFlutter"
-        android:icon="@mipmap/app_icon">
+        android:icon="@mipmap/app_icon"
+        android:usesCleartextTraffic="true"
+        android:networkSecurityConfig="@xml/network_security_config">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
